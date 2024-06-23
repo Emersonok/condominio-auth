@@ -1,0 +1,20 @@
+.h3 {
+  background-color: #1845ad;
+  color: #ffffff;
+  text-align: center;
+  margin: 2rem;
+}
+
+.li {
+  color: #1845ad;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+.deleteIcon {
+  margin-left: 20px;
+}
