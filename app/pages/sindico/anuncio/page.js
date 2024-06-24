@@ -1,9 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import styles from "../../../../styles/signUp.module.css";
-
 import { db } from "@/firebase/firebase";
 import { collection, addDoc } from "firebase/firestore";
+import Link from "next/link";
+import { IoChevronBackCircleSharp } from "react-icons/io5";
 
 async function addDataToFirestore(fullname, message) {
   try {
@@ -21,19 +22,13 @@ async function addDataToFirestore(fullname, message) {
 
 function RegOcorrencias() {
   const [value, setValue] = useState({
-    fullname: "ANÚNCIO",
+    fullname: "COMUNICADO",
     message: "",
   });
 
   const [errors, setErrors] = useState({});
 
   const [data, setData] = useState();
-
-  // useEffect(() => {
-  //   if (Object.keys(errors).length === 0 && data) {
-  //     SubmitButton(true);
-  //   }
-  // }, [SubmitButton, data, errors]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -58,39 +53,42 @@ function RegOcorrencias() {
 
   return (
     <>
-      <div className={styles.background}>
-        <div className={styles.shape}></div>
-        <div className={styles.shape}></div>
-      </div>
+      <div className={styles.background}></div>
       <form onSubmit={handleSubmit} autoComplete="off" className={styles.form}>
-        <h3 className={styles.h3}>Escreva seu nome e Descreva a ocorrência</h3>
+        <h3 className="text-4xl font-mono text-blue-700 mb-10">
+          Enviar Comunicado
+        </h3>
         <label htmlFor="fullname" className={styles.label}>
           Nome
         </label>
         <input
           value={value.fullname}
           type="text"
-          className={styles.input}
+          className="border-2 outline-none sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-blue-700 border-gray placeholder-gray-400 text-white font-mono"
           name="fullname"
+          required
         />
         {errors.fullname && <p className="p">{errors.fullname}</p>}
         <label htmlFor="message" className={styles.label}>
-          Ocorrência
+          Comunicado
         </label>
         <textarea
           value={value.message}
           onChange={handleOnChange}
           type="text"
-          className={styles.textarea}
-          placeholder=" Relatar ocorrência"
+          className="border-2 outline-none sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-blue-700 border-gray placeholder-gray-400 text-white font-mono"
+          placeholder=" Escrever Comunicado"
           name="message"
+          required
         />
         {errors.texto && <p className={styles.p}>{errors.texto}</p>}
 
         <button className={styles.button} onClick={handleSubmit}>
           Enviar
         </button>
-        <a href="/pages/sindico">Voltar para tela inicial</a>
+        <Link href="/pages/sindico" className="p-4">
+          <IoChevronBackCircleSharp />
+        </Link>
       </form>
     </>
   );

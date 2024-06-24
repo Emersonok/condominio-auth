@@ -5,6 +5,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth, firestore } from "@/firebase/firebase";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import type { User } from "firebase/auth";
+import Image from "next/image";
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
@@ -48,6 +49,12 @@ const HomePage = () => {
               case "Sindico":
                 router.push("/pages/sindico");
                 break;
+              case "Morador":
+                router.push("/pages/sindico");
+                break;
+              case "Porteiro":
+                router.push("/pages/sindico");
+                break;
             }
           }
         } else {
@@ -64,7 +71,14 @@ const HomePage = () => {
   }, [router]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <>
+        <p>Loading...</p>
+        <div className="flex items-center justify-center h-screen">
+          <Image src="/images/condoLogo.png" alt="" width={500} height={500} />
+        </div>
+      </>
+    );
   }
 
   return (

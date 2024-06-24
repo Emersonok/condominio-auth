@@ -11,7 +11,7 @@ import Carousel from "@/app/components/carousel";
 export default function Admin() {
   const links = [
     { href: "./sindico/ocorrencia", text: "Registrar" },
-    { href: "./sindico/anuncio", text: "Anúncio" },
+    { href: "./sindico/anuncio", text: "Comunicado" },
 
     { href: "/visualizar", text: "Visualizar" },
   ];

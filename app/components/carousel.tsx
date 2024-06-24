@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 const images = [
@@ -12,18 +12,18 @@ const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Function to go to the previous slide
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
-  };
+  }, [currentIndex]);
 
   // Function to go to the next slide
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     const isLastSlide = currentIndex === images.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
-  };
+  }, [currentIndex]);
 
   // Auto-slide functionality using useEffect
   useEffect(() => {
@@ -33,7 +33,7 @@ const Carousel: React.FC = () => {
 
     // Cleanup the interval on component unmount
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [nextSlide]);
 
   return (
     <div className="relative w-full max-w-lg mx-auto">
