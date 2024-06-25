@@ -9,7 +9,7 @@ import Navbar from "../../components/navbar";
 import Carousel from "@/app/components/carousel";
 
 export default function Admin() {
-  const links = [{ href: "./porteiro/register", text: "Registrar" }];
+  const links = [{ href: "./porteiro/ocorrencia", text: "Registrar" }];
   const [user, setUser] = useState<User | null>(null);
   const [userName, setUserName] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);

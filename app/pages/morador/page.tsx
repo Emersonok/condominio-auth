@@ -11,7 +11,7 @@ import Carousel from "@/app/components/carousel";
 export default function Admin() {
   const links = [
     { href: "/visualizar", text: "Visualizar" },
-    { href: "/contato", text: "https://wa.me/+5571981541631" },
+    { href: "https://wa.me/+5571981541631", text: "contato" },
     { href: "./morador/ocorrencia", text: "Registrar" },
   ];
   const [user, setUser] = useState<User | null>(null);
