@@ -75,7 +75,7 @@ const HomePage = () => {
       <>
         <p>Loading...</p>
         <div className="flex items-center justify-center h-screen">
-          <Image src="/images/condoLogo.png" alt="" width={500} height={500} />
+          <Image src="/favicon.png" alt="" width={500} height={500} />
         </div>
       </>
     );
