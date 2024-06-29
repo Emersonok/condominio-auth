@@ -48,7 +48,7 @@ const Carousel: React.FC = () => {
           >
             <Image
               src={src}
-              alt={`Slid ${index}`}
+              alt={`Slide ${index}`}
               layout="fill"
               objectFit="cover"
             />
