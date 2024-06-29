@@ -44,7 +44,6 @@ const Carousel: React.FC = () => {
             className={`absolute inset-0 transition-opacity duration-1000 ${
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
-            style={{ position: "relative", width: "100%", height: "100%" }}
           >
             <Image
               src={src}
