@@ -2,9 +2,9 @@ import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 const images = [
-  "/images/condominio1.jpg",
-  "/images/condominio2.jpg",
-  "/images/condominio3.jpg",
+  "/public/images/condominio1.jpg",
+  "/public/images/condominio2.jpg",
+  "/publicimages/condominio3.jpg",
   // Add more images as needed
 ];
 
